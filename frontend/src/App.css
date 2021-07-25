@@ -10,8 +10,8 @@ body {
 
 .container {
   max-width: 550px;
-  margin: 20px auto;
   overflow: auto;
+  margin: 20px auto;
   min-height: 90vh;
   padding: 20px;
   border-radius: 5px;
@@ -25,7 +25,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 20px;
+  margin: 0px 0px 35px 0;
   background-color: transparent;
 }
 
