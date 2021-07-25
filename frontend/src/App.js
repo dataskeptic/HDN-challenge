@@ -1,6 +1,6 @@
 import './App.css';
 import Header from './components/Header'
-import { BrowserRouter as Router, Switch, Route  } from "react-router-dom"; 
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom"; 
 import AddHero from './screens/AddHero'
 import HeroesList from './screens/HeroesList'
 import HeroesPowers from './screens/HeroesPowers';
