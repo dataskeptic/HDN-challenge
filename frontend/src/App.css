@@ -6,6 +6,16 @@
 
 body {
   background-color: #03071E;
+  font-family: 'Frank Ruhl Libre', serif;
+}
+
+h2 {
+  font-family: 'Cardo', serif;
+}
+
+img {
+  width: 300px;
+  height: 300px;
 }
 
 .container {
@@ -53,3 +63,4 @@ body {
 .navbar i {
   margin-right: 10px;
 }
+

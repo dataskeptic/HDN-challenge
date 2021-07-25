@@ -30,11 +30,11 @@ const Header = () => {
                 <Link to="/HeroesList" 
                     onClick={listClick} 
                     style={{backgroundColor: listColors }}>
-                    <i className="fas fa-list"></i>List Of Heros</Link>
+                    <i className="fas fa-list"></i>List of Heros</Link>
                 <Link to="/HeroesPowers" 
                     onClick={powerClick}
                     style={{backgroundColor: powersColors }}>
-                    <i className="fas fa-search"></i>Filter By Power</Link>
+                    <i className="fas fa-search"></i>Filter by Power</Link>
                 <Link to="/AddHero"
                     onClick={heroClick}
                     style={{backgroundColor: heroColor }}>    
