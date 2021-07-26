@@ -25,7 +25,7 @@ const Header = () => {
  
     return (
         <nav className="navbar">
-            <h2>SUPER HEROES AGENCY</h2> 
+            <h2><Link style={{backgroundColor: 'transparent'}} Link to="/">SUPER HEROES AGENCY</Link></h2> 
             <div className="links">
                 <Link to="/HeroesList" 
                     onClick={listClick} 
