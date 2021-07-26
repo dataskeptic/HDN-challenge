@@ -40,7 +40,7 @@ img {
 }
 
 .navbar a:hover {
-  background-color: #6A040F;
+  background-color: #9D0208;
 }
 
 .navbar .links {
@@ -64,3 +64,40 @@ img {
   margin-right: 10px;
 }
 
+.form-control {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-control-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.btn-add, .btn-delete {
+  background-color: #6A040F;
+  color: aliceblue;
+  border: none;
+  border-radius: 5px;
+  width: 40px;
+  height: 40px;
+  margin-left: 3px;
+}
+
+label {
+  display: inline-block;
+  margin: 10px 0;
+  color: aliceblue;
+}
+
+input[type='text'] {
+  border: 1px solid #03071E;
+  border-radius: 5px;
+  display: block;
+  font-size: 16px;
+  padding: 10px;
+  width: 80%;
+  height: 40px;
+  background-color: #03071E;
+  margin-bottom: 5px;
+}

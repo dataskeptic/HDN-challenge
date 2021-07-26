@@ -1,4 +1,4 @@
-import {React, useState} from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 const Header = () => {
@@ -8,17 +8,17 @@ const Header = () => {
     const [heroColor, setHeroColor] = useState('');
 
     const listClick = () => {
-        setListColors('#9D0208');
+        setListColors('#6A040F');
         setPowersColors('');
         setHeroColor('')
     }
     const powerClick = () => {
-        setPowersColors('#9D0208');
+        setPowersColors('#6A040F');
         setListColors('');
         setHeroColor('')
     }
     const heroClick = () => {
-        setHeroColor('#9D0208')
+        setHeroColor('#6A040F')
         setPowersColors('');
         setListColors('');
     }
