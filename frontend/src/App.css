@@ -74,6 +74,11 @@ img {
   flex-direction: row;
 }
 
+.btn-add:hover , .btn-delete:hover, .btn-hero:hover {
+  background-color: #9D0208;
+}
+
+
 .btn-add, .btn-delete {
   background-color: #6A040F;
   color: aliceblue;
@@ -82,6 +87,16 @@ img {
   width: 40px;
   height: 40px;
   margin-left: 3px;
+}
+
+.btn-hero {
+  background-color: #6A040F;
+  color: aliceblue;
+  border: none;
+  border-radius: 5px;
+  width: 100px;
+  height: 40px;
+  margin-top: 20px;
 }
 
 label {
@@ -100,4 +115,18 @@ input[type='text'] {
   height: 40px;
   background-color: #03071E;
   margin-bottom: 5px;
+  color:aliceblue;
+}
+
+textarea {
+  border: 1px solid #03071E;
+  border-radius: 5px;
+  display: block;
+  font-size: 16px;
+  padding: 10px;
+  width: 80%;
+  height: 80px;
+  background-color: #03071E;
+  margin-bottom: 5px;
+  color:aliceblue;
 }
