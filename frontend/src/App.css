@@ -14,8 +14,8 @@ h2 {
 }
 
 h3 {
-  color: #03071E;
-  padding-bottom: 5px;
+  color: #6A040F;
+
 }
 
 img {
@@ -88,12 +88,12 @@ li, ul {
   flex-direction: row;
 }
 
-.btn-add:hover , .btn-delete:hover, .btn-hero:hover {
+.btn-add:hover , .btn-delete:hover, .btn-hero:hover, .btn-search:hover, .btn-edit:hover {
   background-color: #9D0208;
 }
 
 
-.btn-add, .btn-delete {
+.btn-add, .btn-delete, .btn-search, .btn-edit {
   background-color: #6A040F;
   color: aliceblue;
   border: none;
@@ -119,7 +119,7 @@ li, ul {
   border-radius: 5px;
   padding: 10px;
   box-shadow: 5px 10px 20px 10px rgba(0,0,0,0.53);
-  background-color: #6A040F;
+  background-color: #03071E;
 }
 
 .powers {
@@ -129,7 +129,7 @@ li, ul {
 }
 
 .powers p {
-  background-color: #03071E;
+  background-color: #6A040F;
   border-radius: 4px;
   padding: 5px;
   margin-right: 5px;
