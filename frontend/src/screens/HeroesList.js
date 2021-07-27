@@ -1,14 +1,10 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext } from 'react'
 import { GlobalContext } from '../context/GlobalState';
 import Hero from '../components/Hero'
 
 const HeroesList = () => {
 
     const { heroes } = useContext(GlobalContext);
-
-    useEffect(() => {
-        console.log(heroes);
-      }, []);
 
     return (
         <div 
