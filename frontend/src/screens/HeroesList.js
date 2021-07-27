@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { GlobalContext } from '../context/GlobalState';
+import Hero from '../components/Hero'
 
 const HeroesList = () => {
 
@@ -10,18 +11,20 @@ const HeroesList = () => {
         <div 
             style={{
                 display: 'flex',
-                flexDirection: 'column',
                 alignItems: 'center',
+                flexDirection: 'column',
                 justifyContent: 'space-around',
                 color: 'aliceblue'
         }}>
-            { hero.length < 1 ? 
-            
+            { hero.length < 1 ?    
             (<div>
-            <img src={"superHero.svg"} alt="superHero"/>
-            <h2 style={{paddingTop: '30px'}}>There's no heroes on the list yet</h2>
+            <h3 style={{paddingTop: '150px' ,color: '#9D0208'}}>There's any hero on the list yet</h3>
             </div>) :
-            (<p>lista pequena</p>)
+            (
+                <ul>
+                    {hero.map( hero => (<Hero key={hero.id} hero={hero} />))}
+                </ul>
+            )
             }
         </div>
     )

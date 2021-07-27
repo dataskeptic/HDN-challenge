@@ -3,7 +3,10 @@ import AppReducer from './AppReducer';
 
 // Initial state
 const initialState = {
-    hero: []
+    hero: [
+        { id: 1, name: 'mateus', description: 'gostoso dms', powers: ['muito forte', 'tesudo', 'perfeiro']},
+        { id: 2, name: 'bla', description: ' dms', powers:['array', 'ne']},
+    ]
 }
 
 // Create context

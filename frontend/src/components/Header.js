@@ -22,10 +22,15 @@ const Header = () => {
         setPowersColors('');
         setListColors('');
     }
+    const clear = () => {
+        setHeroColor('')
+        setPowersColors('');
+        setListColors('');
+    }
  
     return (
         <nav className="navbar">
-            <h2><Link style={{backgroundColor: 'transparent'}} Link to="/">SUPER HEROES AGENCY</Link></h2> 
+            <h2 onClick={clear}><Link style={{backgroundColor: 'transparent'}} to="/">SUPER HEROES AGENCY</Link></h2> 
             <div className="links">
                 <Link to="/HeroesList" 
                     onClick={listClick} 

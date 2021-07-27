@@ -13,9 +13,23 @@ h2 {
   font-family: 'Cardo', serif;
 }
 
+h3 {
+  color: #03071E;
+  padding-bottom: 5px;
+}
+
 img {
   width: 300px;
   height: 300px;
+}
+
+h2 a:hover {
+  color:#9D0208;
+}
+
+li, ul {
+  width: 100%;
+  list-style: none;
 }
 
 .container {
@@ -97,6 +111,28 @@ img {
   width: 100px;
   height: 40px;
   margin-top: 20px;
+}
+
+.hero {
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 5px 10px 20px 10px rgba(0,0,0,0.53);
+  background-color: #6A040F;
+}
+
+.powers {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.powers p {
+  background-color: #03071E;
+  border-radius: 4px;
+  padding: 5px;
+  margin-right: 5px;
 }
 
 label {

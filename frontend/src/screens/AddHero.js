@@ -39,7 +39,7 @@ const AddHero = () => {
         <h2
           style={{
             color: "white",
-            borderBottom: "2px solid #6A040F",
+            borderBottom: "2px solid #03071E",
             paddingBottom: "10px",
           }}
         >
