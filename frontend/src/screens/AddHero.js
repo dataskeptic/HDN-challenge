@@ -1,37 +1,46 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
+import { GlobalContext } from '../context/GlobalState';
 
 const AddHero = () => {
 
-    const [heroName, setHeroName] = useState('');
+    const [name, setName] = useState('');
     const [description, setDescription] = useState('');
-    const [powerList, setpowerList] = useState(['']);
+    const [powers, setPowers] = useState(['']);
+
+    const { addHero } = useContext(GlobalContext);
 
     // handle input change
     const handleInputChange = (e, index) => {
       const { value } = e.target;
-      const list = [...powerList];
+      const list = [...powers];
       list[index] = value;
-      setpowerList(list);
+      setPowers(list);
     };
 
     // handle click event of the Remove button
     const handleRemoveClick = (index) => {
-      const list = [...powerList];
+      const list = [...powers];
       list.splice(index, 1);
-      setpowerList(list);
+      setPowers(list);
     };
 
     // handle click event of the Add button
     const handleAddClick = () => {
-      setpowerList([...powerList, {}]);
+      setPowers([...powers, {}]);
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        const hero = {heroName, description, powerList};
+        const newHero = {
+          id: Math.floor(Math.random() * 100000000),
+          name, 
+          description, 
+          powers
+        };
+        addHero(newHero);
         alert("A new hero has been added")
-        console.log(hero);
+        console.log(newHero);
     }
 
     return (
@@ -50,8 +59,8 @@ const AddHero = () => {
             <input
               type="text"
               required
-              value={heroName}
-              onChange={(e) => setHeroName(e.target.value)}
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               placeholder="Enter with the hero's name..."
             />
           </div>
@@ -67,19 +76,19 @@ const AddHero = () => {
           </div>
           <label htmlFor="text">Hero's power: </label>
 
-          {powerList.map((x, i) => {
+          {powers.map((x, i) => {
             return (
               <div className="form-control-row">
                 <input
                   type="text"
                   required
-                  name="PowerName"
-                  value={x.PowerName}
+                  name="powers"
+                  value={x.power}
                   placeholder="Enter with the hero power..."
                   onChange={(e) => handleInputChange(e, i)}
                 />
                 <div className="form-control-row">
-                  {powerList.length !== 1 && (
+                  {powers.length !== 1 && (
                     <button
                       className="btn-delete"
                       onClick={() => handleRemoveClick(i)}
@@ -87,7 +96,7 @@ const AddHero = () => {
                       <i className="fas fa-trash"></i>
                     </button>
                   )}
-                  {powerList.length - 1 === i && (
+                  {powers.length - 1 === i && (
                     <button className="btn-add" onClick={handleAddClick}>
                       <i className="fas fa-plus"></i>
                     </button>
@@ -97,9 +106,9 @@ const AddHero = () => {
             );
           })}
           <button className="btn-hero">Add new hero</button>
-           {/* <p>{heroName}</p>
+           {/* <p>{hero}</p>
           <p>{description}</p>
-          <div style={{ marginTop: 20 }}>{JSON.stringify(powerList)}</div>  */}
+          <div style={{ marginTop: 20 }}>{JSON.stringify(powers)}</div>  */}
         </form>
       </>
     );

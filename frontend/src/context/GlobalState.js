@@ -1,17 +1,9 @@
-import React, { createContext, useReducer } from "react";
+import React, { createContext, useReducer, useEffect } from "react";
 import AppReducer from "./AppReducer";
 
 // Initial state
 const initialState = {
-  heroes: [
-    {
-      id: 1,
-      name: "mateus",
-      description: "gostoso dms",
-      powers: ["muito forte", "tesudo", "perfeiro"],
-    },
-    { id: 2, name: "bla", description: " dms", powers: ["array", "ne"] },
-  ],
+  heroes: [],
 };
 
 // Create context
@@ -29,11 +21,20 @@ export const GlobalProvider = ({ children }) => {
     });
   }
 
+  function addHero(hero) {
+    dispatch({
+      type: 'ADD_HERO',
+      payload: hero
+    });
+  }
+
   return (
+
     <GlobalContext.Provider
       value={{
         heroes: state.heroes,
-        deleteHero
+        deleteHero, 
+        addHero
       }}
     >
       {children}
