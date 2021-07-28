@@ -1,6 +1,10 @@
 const express = require('express');
 const router = express.Router();
+const { getHeroes } = require('../controllers/heroes');
 
-router.get('/', (req, res) => res.send('hello'));
+
+router
+  .route('/')
+  .get(getHeroes);
 
 module.exports = router;
