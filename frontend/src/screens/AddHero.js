@@ -33,7 +33,6 @@ const AddHero = () => {
         e.preventDefault();
 
         const newHero = {
-          id: Math.floor(Math.random() * 100000000),
           name, 
           description, 
           powers

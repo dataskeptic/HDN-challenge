@@ -1,10 +1,15 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { GlobalContext } from '../context/GlobalState';
 import Hero from '../components/Hero'
 
 const HeroesList = () => {
 
-    const { heroes } = useContext(GlobalContext);
+    const { heroes, getHeroes } = useContext(GlobalContext);
+
+    useEffect(() => {
+        getHeroes();
+        // eslint-disable-next-line
+    }, []);
 
     return (
         <div 
@@ -21,7 +26,7 @@ const HeroesList = () => {
             </div>) :
             (
                 <ul>
-                    {heroes.map( hero => (<Hero key={hero.id} hero={hero} />))}
+                    {heroes.map( hero => (<Hero key={hero._id} hero={hero} />))}
                 </ul>
             )
             }
