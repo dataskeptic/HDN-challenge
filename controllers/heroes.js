@@ -1,14 +1,14 @@
-// @desc    Get all transactions
-// @route   GET /api/v1/transactions
+// @desc    Get all heroes
+// @route   GET /api/heroes
 // @access  Public
-/* exports.getTransactions = async (req, res, next) => {
+/* exports.getheroes = async (req, res, next) => {
     try {
-        const transactions = await Transaction.find();
+        const heroes = await Transaction.find();
 
         return res.status(200).json({
         success: true,
-        count: transactions.length,
-        data: transactions
+        count: heroes.length,
+        data: heroes
         });
     } catch (err) {
         return res.status(500).json({
@@ -24,3 +24,17 @@
 exports.getHeroes = async (req, res, next) => {
     res.send('Get heroes')    
 }
+
+// @desc    Add hero
+// @route   POST /api/heroes
+// @access  Public
+exports.addHero = async (req, res, next) => {
+    res.send('add hero');
+  }
+  
+  // @desc    Delete hero
+  // @route   DELETE /api/heroes/:id
+  // @access  Public
+  exports.deleteHero = async (req, res, next) => {
+    res.send('Delete hero');
+  }
