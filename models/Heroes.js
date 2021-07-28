@@ -12,7 +12,7 @@ const HeroesSchema = new mongoose.Schema({
     required: [true, 'Please add some text']
   },
   powers: {
-    type: [string],
+    type: [String],
     trim: true,
     required: [true, 'Please add some text']
   }
