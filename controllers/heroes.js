@@ -1,22 +1,4 @@
-// @desc    Get all heroes
-// @route   GET /api/heroes
-// @access  Public
-/* exports.getheroes = async (req, res, next) => {
-    try {
-        const heroes = await Transaction.find();
-
-        return res.status(200).json({
-        success: true,
-        count: heroes.length,
-        data: heroes
-        });
-    } catch (err) {
-        return res.status(500).json({
-        success: false,
-        error: 'Server Error'
-        });
-    }
-} */
+const Heroes = require('../models/Heroes');
 
 // @desc    Get all heroes
 // @route   GET /api/heroes
