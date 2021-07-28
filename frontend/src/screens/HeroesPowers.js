@@ -1,11 +1,17 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import { GlobalContext } from '../context/GlobalState';
+import Hero from '../components/Hero'
 
 const HeroesPowers = () => {
 
     const [text, setText] = useState('');
     const [power, setPower] = useState('');
-    const { heroes } = useContext(GlobalContext);
+    const { heroes, getHeroes } = useContext(GlobalContext);
+
+    useEffect(() => {
+        getHeroes();
+        // eslint-disable-next-line
+    }, []);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -28,9 +34,8 @@ const HeroesPowers = () => {
                 </div>
             </form>
                 <ul style={{color: 'aliceblue'}}>
-                    {heroes.map( p => (<p key={p.id}>{p.powers}</p>))}
+                    {heroes.map( hero => (<div key={hero.id}>{ hero.powers.map( p => p === power && <Hero key={hero._id} hero={hero} />) }</div>))}
                 </ul>
-                {power}
         </div>
     )
 }

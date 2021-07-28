@@ -1,6 +1,6 @@
 # HDN tech challenge 
 
-> Stack used in the project: MongoDB, Expess, Node, ReactJs
+> Stack used in the project: MongoDB, Express, Node, ReactJs
 
 ## Usage
 
