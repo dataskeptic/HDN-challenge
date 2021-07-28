@@ -1,13 +1,12 @@
 import React, { createContext, useReducer } from "react";
 import AppReducer from "./AppReducer";
-import axios from 'axios';
-
+import axios from "axios";
 
 // Initial state
 const initialState = {
   heroes: [],
   error: null,
-  loading: true
+  loading: true,
 };
 
 // Create context
@@ -20,16 +19,16 @@ export const GlobalProvider = ({ children }) => {
   // Actions
   async function getHeroes() {
     try {
-      const res = await axios.get('/api/heroes');
+      const res = await axios.get("/api/heroes");
 
       dispatch({
-        type: 'GET_HEROES',
-        payload: res.data.data
+        type: "GET_HEROES",
+        payload: res.data.data,
       });
     } catch (err) {
       dispatch({
-        type: 'HEROES_ERROR',
-        payload: err.response.data.error
+        type: "HEROES_ERROR",
+        payload: err.response.data.error,
       });
     }
   }
@@ -39,34 +38,48 @@ export const GlobalProvider = ({ children }) => {
       await axios.delete(`/api/heroes/${id}`);
 
       dispatch({
-        type: 'DELETE_HERO',
-        payload: id
+        type: "DELETE_HERO",
+        payload: id,
       });
     } catch (err) {
       dispatch({
-        type: 'HEROES_ERROR',
-        payload: err.response.data.error
+        type: "HEROES_ERROR",
+        payload: err.response.data.error,
       });
     }
   }
 
-  function addHero(hero) {
-    dispatch({
-      type: 'ADD_HERO',
-      payload: hero
-    });
+  async function addHero(hero) {
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+
+    try {
+      const res = await axios.post("/api/heroes", hero, config);
+
+      dispatch({
+        type: "ADD_HERO",
+        payload: res.data.data,
+      });
+    } catch (err) {
+      dispatch({
+        type: "HERO_ERROR",
+        payload: err.response.data.error,
+      });
+    }
   }
 
   return (
-
     <GlobalContext.Provider
       value={{
         heroes: state.heroes,
         error: state.error,
         loading: state.loading,
         getHeroes,
-        deleteHero, 
-        addHero
+        deleteHero,
+        addHero,
       }}
     >
       {children}
