@@ -18,7 +18,7 @@ const Hero = ( { hero } ) => {
                 </div>
                 <div style={{display: 'flex', justifyContent: 'flex-end'}}>
                     <button className="btn-edit"><i className="fas fa-pencil-alt"></i></button>
-                    <button onClick={() => deleteHero(hero.id)} className="btn-delete"> <i className="fas fa-trash"></i> </button>
+                    <button onClick={() => deleteHero(hero._id)} className="btn-delete"> <i className="fas fa-trash"></i> </button>
                 </div>
             </div>
         </li>

@@ -34,11 +34,20 @@ export const GlobalProvider = ({ children }) => {
     }
   }
 
-  function deleteHero(id) {
-    dispatch({
-      type: "DELETE_HERO",
-      payload: id,
-    });
+  async function deleteHero(id) {
+    try {
+      await axios.delete(`/api/heroes/${id}`);
+
+      dispatch({
+        type: 'DELETE_HERO',
+        payload: id
+      });
+    } catch (err) {
+      dispatch({
+        type: 'HEROES_ERROR',
+        payload: err.response.data.error
+      });
+    }
   }
 
   function addHero(hero) {
