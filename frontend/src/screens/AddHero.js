@@ -29,6 +29,7 @@ const AddHero = () => {
       setPowers([...powers, {}]);
     };
 
+    // Adding new Hero
     const handleSubmit = (e) => {
         e.preventDefault();
 

@@ -43,6 +43,8 @@ li, ul {
   box-shadow: 5px 5px 15px 5px rgba(12,0,4,0.67);
 }
 
+/* stylizing the nav-bar --------------------------------------------- */
+
 .navbar {
   color: aliceblue;
   display: flex;
@@ -78,6 +80,8 @@ li, ul {
   margin-right: 10px;
 }
 
+/* stylizing inputs fields ------------------------------------------------- */
+
 .form-control {
   display: flex;
   flex-direction: column;
@@ -88,10 +92,44 @@ li, ul {
   flex-direction: row;
 }
 
+label {
+  display: inline-block;
+  margin: 10px 0;
+  color: aliceblue;
+}
+
+input[type='text'] {
+  border: 1px solid #03071E;
+  border-radius: 5px;
+  display: block;
+  font-size: 16px;
+  padding: 10px;
+  width: 80%;
+  height: 40px;
+  background-color: #03071E;
+  margin-bottom: 5px;
+  color:aliceblue;
+}
+
+
+textarea {
+  border: 1px solid #03071E;
+  border-radius: 5px;
+  display: block;
+  font-size: 16px;
+  padding: 10px;
+  width: 80%;
+  height: 80px;
+  background-color: #03071E;
+  margin-bottom: 5px;
+  color:aliceblue;
+}
+
+/* stylizing buttons -------------------------------------------------- */
+
 .btn-add:hover , .btn-delete:hover, .btn-hero:hover, .btn-search:hover, .btn-edit:hover {
   background-color: #9D0208;
 }
-
 
 .btn-add, .btn-delete, .btn-search, .btn-edit {
   background-color: #6A040F;
@@ -133,37 +171,4 @@ li, ul {
   border-radius: 4px;
   padding: 5px;
   margin-right: 5px;
-}
-
-label {
-  display: inline-block;
-  margin: 10px 0;
-  color: aliceblue;
-}
-
-input[type='text'] {
-  border: 1px solid #03071E;
-  border-radius: 5px;
-  display: block;
-  font-size: 16px;
-  padding: 10px;
-  width: 80%;
-  height: 40px;
-  background-color: #03071E;
-  margin-bottom: 5px;
-  color:aliceblue;
-}
-
-
-textarea {
-  border: 1px solid #03071E;
-  border-radius: 5px;
-  display: block;
-  font-size: 16px;
-  padding: 10px;
-  width: 80%;
-  height: 80px;
-  background-color: #03071E;
-  margin-bottom: 5px;
-  color:aliceblue;
 }
