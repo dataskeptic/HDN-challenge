@@ -111,6 +111,13 @@ input[type='text'] {
   color:aliceblue;
 }
 
+.hero input[type='text'] {
+  background-color: #060b30;
+}
+
+.hero textarea {
+  background-color: #060b30;
+}
 
 textarea {
   border: 1px solid #03071E;

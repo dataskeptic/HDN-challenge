@@ -1,19 +1,31 @@
-import React, {useState, useContext} from 'react'
+import React, {useContext, useState} from 'react'
 import { GlobalContext } from '../context/GlobalState';
+import Hero from "../components/Hero";
 
-const AddHero = () => {
 
-    const [name, setName] = useState('');
-    const [description, setDescription] = useState('');
-    const [powers, setPowers] = useState(['']);
+
+const EditHero = ({ hero, edit, handleCancel }) => {
+
+
+    const [name, setName] = useState(hero.name ||'');
+    const [description, setDescription] = useState(hero.description || '');
+    const [powers, setPowers] = useState(hero.powers || []);
 
     const { addHero } = useContext(GlobalContext);
 
     // handle input change
-    const handleInputChange = (e, index) => {
-      const { value } = e.target;
-      const list = [...powers];
-      list[index] = value;
+    const handleNameChange = (value) => {
+      setName(value);
+    };
+
+    // handle input change
+    const handleDescriptionChange = (value) => {
+      setDescription(value)
+    };
+
+    // handle input change
+    const handlePowersChange = (value) => {
+      const list = [...powers, value];
       setPowers(list);
     };
 
@@ -33,34 +45,28 @@ const AddHero = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        const newHero = {
+
+
+        /* const newHero = {
           name, 
           description, 
           powers
         };
         addHero(newHero);
         alert("A new hero has been added")
-        console.log(newHero);
+        console.log(newHero); */
     }
 
     return (
-      <>
-        <h2
-          style={{
-            color: "white",
-            paddingBottom: "10px",
-          }}
-        >
-          Add new hero
-        </h2>
-        <form>
+        <div className="hero">
+            <form onSubmit={handleSubmit}>
           <div className="form-control">
             <label htmlFor="text">Hero's name: </label>
             <input
               type="text"
               required
               value={name}
-              onChange={(e) => setName(e.target.value)}
+              onChange={(e) => handleNameChange(e.target.value)}
               placeholder="Enter with the hero's name..."
             />
           </div>
@@ -70,7 +76,7 @@ const AddHero = () => {
               type="text"
               required
               value={description}
-              onChange={(e) => setDescription(e.target.value)}
+              onChange={(e) => handleDescriptionChange(e.target.value)}
               placeholder="Enter with hero's description..."
             />
           </div>
@@ -85,7 +91,7 @@ const AddHero = () => {
                   name="powers"
                   value={x.power}
                   placeholder="Enter with the hero power..."
-                  onChange={(e) => handleInputChange(e, i)}
+                  onChange={(e) => handlePowersChange(e)}
                 />
                 <div className="form-control-row">
                   {powers.length !== 1 && (
@@ -105,13 +111,13 @@ const AddHero = () => {
               </div>
             );
           })}
-          <button onClick={handleSubmit} className="btn-hero">Add new hero</button>
-           {/* <p>{hero}</p>
-          <p>{description}</p>
-          <div style={{ marginTop: 20 }}>{JSON.stringify(powers)}</div>  */}
+          <button style={{width:'75px', marginRight: '5px'}} className="btn-hero">Edit Hero</button>
+          <button onClick={() => handleCancel()} style={{width:'75px'}} className="btn-hero">Cancel</button>
+           
         </form>
-      </>
-    );
+      
+        </div>
+    )
 }
 
-export default AddHero
+export default EditHero

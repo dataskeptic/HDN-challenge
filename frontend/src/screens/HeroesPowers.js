@@ -5,7 +5,7 @@ import Hero from "../components/Hero";
 const HeroesPowers = () => {
   const [text, setText] = useState("");
   const [power, setPower] = useState("");
-  const [powerExist, setPowerExist] = useState(false);
+ /*  const [heroesByPower, setHeroesByPower] = useState([{}]); */
   const { heroes, getHeroes } = useContext(GlobalContext);
 
   useEffect(() => {
@@ -17,6 +17,10 @@ const HeroesPowers = () => {
     e.preventDefault();
     setPower(text);
   };
+
+  /* const getHeroByPower = (hero) = {
+    setHeroesByPower([...heroesByPower, hero])
+  } */
 
   return (
     <div>
@@ -42,8 +46,11 @@ const HeroesPowers = () => {
         {heroes.map((hero) => (
           <div key={hero.id}>
             {hero.powers.map(
-              (p) => p === power && <Hero key={hero._id} hero={hero}/>
+              (p) => p === power && (<Hero key={hero._id} hero={hero} />)
             )}
+         {/*    {heroesByPower.length < 0 ? (<p>tem nada aqui</p>) : (<div>console.log(heroesByPower)</div>)
+               heroesByPower.map( heroesByPower => <Hero key={heroesByPower._id} hero={heroesByPower} /> ) 
+            }  */}           
             {/* In the above command we are looping through the powers array and checking 
                 if matches with the power insert in the input fild */}
           </div>
