@@ -3,9 +3,11 @@ import { GlobalContext } from "../context/GlobalState";
 import Hero from "../components/Hero";
 
 const HeroesPowers = () => {
+
+  // This is the filter by power screen
+  
   const [text, setText] = useState("");
   const [power, setPower] = useState("");
- /*  const [heroesByPower, setHeroesByPower] = useState([{}]); */
   const { heroes, getHeroes } = useContext(GlobalContext);
 
   useEffect(() => {
@@ -17,10 +19,6 @@ const HeroesPowers = () => {
     e.preventDefault();
     setPower(text);
   };
-
-  /* const getHeroByPower = (hero) = {
-    setHeroesByPower([...heroesByPower, hero])
-  } */
 
   return (
     <div>

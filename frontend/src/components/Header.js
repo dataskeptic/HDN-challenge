@@ -7,6 +7,7 @@ const Header = () => {
     const [powersColors, setPowersColors] = useState('');
     const [heroColor, setHeroColor] = useState('');
 
+    // This is just a way to change the backgroundColor of items nav
     const listClick = () => {
         setListColors('#6A040F');
         setPowersColors('');

@@ -13,17 +13,17 @@ const EditHero = ({ hero, edit, handleCancel }) => {
     // eslint-disable-next-line
   }, []);
 
-  // handle input change
+  // handle input name change
   const handleNameChange = (value) => {
     setName(value);
   };
 
-  // handle input change
+  // handle input description change
   const handleDescriptionChange = (value) => {
     setDescription(value);
   };
 
-  // handle input change
+  // handle input powers change
   const handlePowersChange = (e, index) => {
     const { value } = e.target;
     const list = [...powers];
@@ -43,7 +43,7 @@ const EditHero = ({ hero, edit, handleCancel }) => {
     setPowers([...powers, {}]);
   };
 
-  // Adding new Hero
+  // Eding Hero
   const handleSubmit = (e) => {
     e.preventDefault();
 
