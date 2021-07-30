@@ -9,8 +9,6 @@ const initialState = {
   loading: true,
 };
 
-
-
 // Create context
 export const GlobalContext = createContext(initialState);
 
