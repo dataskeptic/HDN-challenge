@@ -23,3 +23,5 @@ change config.env file in config folder
  npm run frontend
  
 ```
+
+The web app has three main screens, and you can navigate through them using the navbar. The first screen is the List of Heroes and it shows in a hero component all the heroes that were registered in the app, you can delete or edit each hero component. The second screen is the Filter by Power, where you can enter with a power name in the input field, and after clicking on the search button the app will look for all the heroes with this specific power and show them, and the last screen is the Add Hero, which is a form to register new heroes.
