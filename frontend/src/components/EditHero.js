@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
 import { GlobalContext } from "../context/GlobalState";
 
-const EditHero = ({ hero, edit, handleCancel }) => {
+const EditHero = ({ hero, handleCancel }) => {
   const [name, setName] = useState(hero.name || "");
   const [description, setDescription] = useState(hero.description || "");
   const [powers, setPowers] = useState(hero.powers || []);
@@ -44,12 +44,11 @@ const EditHero = ({ hero, edit, handleCancel }) => {
   };
 
   // Eding Hero
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = (e) => { 
 
     deleteHero(hero._id);
 
-    const editHero = {
+     const editHero = {
       name,
       description,
       powers,
@@ -57,7 +56,9 @@ const EditHero = ({ hero, edit, handleCancel }) => {
     addHero(editHero);
     alert("The hero has been edited");
     console.log(editHero);
-    handleCancel();
+    handleCancel();  
+    e.preventDefault();
+    
   };
 
   return (
@@ -87,7 +88,7 @@ const EditHero = ({ hero, edit, handleCancel }) => {
 
         {powers.map((x, i) => {
           return (
-            <div className="form-control-row">
+            <div key={i} className="form-control-row">
               <input
                 type="text"
                 required
@@ -117,7 +118,7 @@ const EditHero = ({ hero, edit, handleCancel }) => {
         <button
           style={{ width: "75px", marginRight: "5px" }}
           className="btn-hero"
-          onSubmit={handleSubmit}
+          onClick={handleSubmit}
         >
           Edit Hero
         </button>
